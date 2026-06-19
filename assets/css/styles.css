@@ -1,17 +1,43 @@
 html, body { height: 100%; margin: 0; } /* Tells it to take up full height of the view */
 
+/* CSS Variables: centralized color palette and font stack */
+:root {
+  --green-deep: #1f5d44;
+  --green-mid: #2f7a5c;
+  --cream: #faf6ee;
+  --coral: #e8763c;
+  --coral-dark: #cf5f29;
+  --text-dark: #28332c;
+  --heading-font: 'Poppins', 'Georgia', serif;
+  --body-font: 'Inter', Arial, sans-serif;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--text-dark);
+  font-family: var(--body-font);
+}
+
 /* Element Selector: Change the background of the entire header tag */
 header {
-  background-color: green;
+  background-color: var(--green-deep);
   color: white;
-  font-size: 2rem;               
+  font-size: 2rem;
   text-align: center;
-  padding: 10px;            
-  font-family: "Georgia", serif;
+  padding: 48px 20px 36px;
+  font-family: var(--heading-font);
   width: 100%;
   margin: 0;
   box-sizing: border-box;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Adds a subtle shadow break */
+}
+
+.header-tagline {
+  font-family: var(--body-font);
+  font-size: 1rem;
+  font-weight: 400;
+  color: #d9ecdf;
+  margin-top: 10px;
 }
 
 main {
@@ -33,9 +59,13 @@ div > section {
 
 nav {
   flex-direction: row;
-  background-color: green;
-  padding: 10pxs;
-  
+  background-color: white;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
   display: flex;
   justify-content: center; /* This will center all links together */
   gap: 15px;               /* This puts clean spacing between each link */
@@ -43,16 +73,23 @@ nav {
 
 
 article {
-  background-color: #f9f9f9;
-  border-radius: 50px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 #contact {
-  background-color: #f9f9f9;
-  border-radius: 50px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 32px;
   width: 35%;
   min-width: 280px;
   max-width: 1000px;
@@ -67,10 +104,10 @@ article {
 
 footer {
   width: 100%;
-  background-color: green;
+  background-color: var(--green-deep);
   color: white;
   text-align: center;
-  font-family: "Georgia", serif;
+  font-family: var(--body-font);
   font-size: small;
   font-weight: 600;
 
@@ -82,23 +119,37 @@ footer {
   margin-top: 40px;
 }
 
+.footer-tag {
+  opacity: 0.8;
+  font-weight: 400;
+}
+
 /* Force labels to behave like blocks so they take up their own line */
 label {
   display: block;
   margin-top: 15px;
   margin-bottom: 5px;
-  font-weight: bold;
+  font-weight: 600;
+  text-align: left;
 }
 
 
 /* ID Selector: Target your specific name input field to give it a border */
 #name, #email, #message {
-  border: 2px solid green;
-  border-radius: 5px;
+  border: 2px solid #d8e6dd;
+  border-radius: 8px;
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
   font-size: 1rem;
+  font-family: var(--body-font);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#name:focus, #email:focus, #message:focus {
+  outline: none;
+  border-color: var(--green-mid);
+  box-shadow: 0 0 0 3px rgba(47, 122, 92, 0.15);
 }
 
 #message {
@@ -110,59 +161,115 @@ label {
 /* Descendant Selector: Make all links inside nav uppercase */
 nav a {
   text-transform: uppercase;
-  padding: 10px;
-  color: white;
-  background-color: green;
+  padding: 10px 14px;
+  color: var(--green-deep);
+  background-color: transparent;
   line-height: 1.5;
   display: inline-block;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 nav a:hover, nav a:focus {
-  color: white;
-  background-color: rgb(1, 90, 1);
+  color: var(--green-deep);
+  background-color: #e9f3ec;
 }
 
 /* Pseudo-class Selector: Style the first section inside main to have a different font */
 section:first-child {
-  font-family: Arial, sans-serif;
+  font-family: var(--body-font);
 }
 
 
 /* Attribute Selector: Give just the email and text input a light gray background */
 input[type="email"], input[type="text"] {
-  background-color: #eee;
+  background-color: #f7f9f7;
 }
 
 /* Class Selector: Style all elements with the class "button" */
 .button {
   display: inline-block;
   text-align: center;
-  padding: 12px 12px;
+  padding: 14px 24px;
   font-weight: 600;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 40px 6px 15px; /* reduced horizontal margin so buttons sit close together */
-  background-color: rgb(5, 139, 5);
+  margin: 24px 6px 0;
+  background-color: var(--coral);
   color: white;
-  border: 2px solid rgb(5, 139, 5);
-  border-radius: 5px;
+  border: 2px solid var(--coral);
+  border-radius: 8px;
   transition: all 0.2s ease-in-out;   /* Makes color changes smooth when hovered */
+}
+
+.button:hover {
+  background-color: var(--coral-dark);
+  border-color: var(--coral-dark);
 }
 
 .button-group {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6px; 
-
+  gap: 6px;
 }
 
 .button-secondary {
-  background-color: green;
+  background-color: var(--green-deep);
+  border-color: var(--green-deep);
+}
+
+.button-secondary:hover {
+  background-color: var(--green-mid);
+  border-color: var(--green-mid);
 }
 
 /* Active State: Shrink or slightly change the button when clicked */
 .button:active {
-  transform: scale(0.75);
+  transform: scale(0.95);
+}
+
+/* Hero layout: text column + image column */
+.hero-flex {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h2 {
+  font-family: var(--heading-font);
+  font-size: 1.8rem;
+  color: var(--green-deep);
+}
+
+.hero-text h3 {
+  font-family: var(--heading-font);
+  font-size: 1.2rem;
+  margin-top: 16px;
+}
+
+.hero-media {
+  flex: 1;
+}
+
+article h3 {
+  font-family: var(--heading-font);
+  padding: 0 16px;
+  margin-top: 16px;
+}
+
+article p {
+  padding: 0 16px 16px;
 }
 
 
@@ -197,6 +304,15 @@ input[type="email"], input[type="text"] {
     border-radius: 16px;
   }
 
+  .hero-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
   .hero-section img {
     height: 220px;
   }
@@ -210,17 +326,18 @@ img {
 
 
 article img {
-  width: 100%;    
+  width: 100%;
   height: 200px;
-  object-fit: cover;  
-  border-radius: 50px 50px 0 0; /* Rounds the top corners to match card's 50px border-radius */
+  object-fit: cover;
+  border-radius: 14px 14px 0 0; /* Rounds the top corners to match card's 14px radius */
 }
 
 .hero-section img {
-  max-width: 600px;     
-  width: 100%;           
-  height: 350px;      
-  object-fit: cover;     
-  margin: 20px auto;     
-  border-radius: 15px;  
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); }
+  max-width: 600px;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+}

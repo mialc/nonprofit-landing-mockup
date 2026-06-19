@@ -7,6 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Helping Families Access Food | Nonprofit Landing Page Mockup</title>
         <meta name="description" content="A responsive nonprofit landing page mockup built with semantic HTML and custom CSS — Grid, Flexbox, and media queries.">
+        <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231f5d44'/%3E%3Ctext x='50' y='68' font-size='52' font-family='sans-serif' text-anchor='middle'%3E%F0%9F%8D%8E%3C/text%3E%3C/svg%3E">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/styles.css">
 
     </head>
@@ -15,6 +19,7 @@
 
             <header id="home">
                 <h1>Helping Families Access Food</h1>
+                <p class="header-tagline">A community committed to ending hunger, one family at a time.</p>
             </header>
 
             <nav>
@@ -27,14 +32,20 @@
         <main>
 
                 <section class="hero-section" id="about">
-                    <h2>Welcome to Our Organization</h2>
-                    <p>We offer a variety of programs to help families access nutritious meals.</p>
+                    <div class="hero-flex">
+                        <div class="hero-text">
+                            <h2>Welcome to Our Organization</h2>
+                            <p>We offer a variety of programs to help families access nutritious meals.</p>
 
-                    <h3>About Our Mission</h3>
-                    <p>Support programs that connect communities with meals.</p>
-                    <img src="assets/images/hero-food-assistance.jpg" alt="Volunteers helping a family with groceries at a community food event">
+                            <h3>About Our Mission</h3>
+                            <p>Support programs that connect communities with meals.</p>
 
-                    <a href="#contact" class="button">Get Involved Today</a>
+                            <a href="#contact" class="button">Get Involved Today</a>
+                        </div>
+                        <div class="hero-media">
+                            <img src="assets/images/hero-food-assistance.jpg" alt="Volunteers helping a family with groceries at a community food event">
+                        </div>
+                    </div>
                 </section>
 
              <div class="program-grid" id="programs">
@@ -88,6 +99,7 @@
                     <a href="#">Privacy Policy</a>
                 </div>
                     <p class="footer-legal">&copy; 2026 Helping Families Access Food. All rights reserved.</p>
+                    <p class="footer-tag">Built with HTML, CSS, Flexbox & Grid.</p>
             </footer>
         </body>
 
