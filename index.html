@@ -1,113 +1,123 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-    
-    <head>
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Helping Families Access Food | Nonprofit Landing Page Mockup</title>
-        <meta name="description" content="A responsive nonprofit landing page mockup built with semantic HTML and custom CSS — Grid, Flexbox, and media queries.">
-        <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231f5d44'/%3E%3Ctext x='50' y='68' font-size='52' font-family='sans-serif' text-anchor='middle'%3E%F0%9F%8D%8E%3C/text%3E%3C/svg%3E">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/styles.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helping Families Access Food | Nonprofit Landing Page Mockup</title>
+  <meta name="description" content="A responsive nonprofit landing page mockup built with semantic HTML and custom CSS — Grid, Flexbox, and media queries.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231f5d44'/%3E%3Ctext x='50' y='68' font-size='52' font-family='sans-serif' text-anchor='middle'%3E%F0%9F%8D%8E%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
 
-    </head>
+<body>
+  <header class="site-header" id="home">
+    <div class="page-width header-inner">
+      <div>
+        <p class="eyebrow">Nonprofit Landing Page Mockup</p>
+        <h1>Helping Families Access Food</h1>
+        <p class="header-tagline">A community committed to ending hunger, one family at a time.</p>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-        <body>
-
-            <header id="home">
-                <h1>Helping Families Access Food</h1>
-                <p class="header-tagline">A community committed to ending hunger, one family at a time.</p>
-            </header>
-
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#programs">Programs</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-        <main>
-
-                <section class="hero-section" id="about">
-                    <div class="hero-flex">
-                        <div class="hero-text">
-                            <h2>Welcome to Our Organization</h2>
-                            <p>We offer a variety of programs to help families access nutritious meals.</p>
-
-                            <h3>About Our Mission</h3>
-                            <p>Support programs that connect communities with meals.</p>
-
-                            <a href="#contact" class="button">Get Involved Today</a>
-                        </div>
-                        <div class="hero-media">
-                            <div class="hero-graphic">
-                                <span class="hero-graphic-icon" aria-hidden="true">🍲</span>
-                                <p class="hero-graphic-stat">10,000+</p>
-                                <p class="hero-graphic-label">families served since 2020</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-            <div class="programs-band" id="programs">
-             <div class="program-grid">
-                    <article>
-                        <div class="article-icon icon-impact" aria-hidden="true">📊</div>
-                        <h3>Our Impact</h3>
-                        <p>Since 2020, we have served over 10,000 families in need.</p>
-                    </article>
-
-                    <article>
-                        <div class="article-icon icon-story" aria-hidden="true">🤝</div>
-                        <h3>Our Story</h3>
-                        <p>We started our journey in 2020 with a simple mission: to ensure no family goes hungry.</p>
-                    </article>
-
-                    <article>
-                        <div class="article-icon icon-goal" aria-hidden="true">🌱</div>
-                        <h3>Our Goal</h3>
-                        <p>Our goal is to create a community where every family has access to nutritious meals and support.</p>
-                    </article>
+  <main>
+    <section class="hero-section" id="about">
+      <div class="page-width hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Feeding hope in every neighborhood</p>
+          <h2>Shared resources, safe meals, and lasting support.</h2>
+          <p>We connect families with meal assistance, volunteer opportunities, and neighborhood support so more people can thrive.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="button">Help out</a>
+            <a href="#programs" class="button button-secondary">View Programs</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="hero-card">
+            <p class="hero-card-label">Families served</p>
+            <p class="hero-card-number">10,000+</p>
+            <p class="hero-card-copy">Since 2020, our partner network has delivered meals, mentorship, and community support.</p>
+          </div>
+          <div class="hero-stat-grid">
+            <div class="stat-block">
+              <span>24</span>
+              <p>Community events per year</p>
             </div>
+            <div class="stat-block">
+              <span>18</span>
+              <p>Local partner organizations</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div>
-                <section class="contact-section">
-                    <form id="contact">
+    <section class="programs-band" id="programs">
+      <div class="page-width">
+        <div class="section-heading">
+          <p class="eyebrow">Programs</p>
+          <h2>What we do to support families</h2>
+        </div>
+        <div class="program-grid">
+          <article>
+            <div class="article-icon" aria-hidden="true">I</div>
+            <h3>Our Impact</h3>
+            <p>We help families access fresh food, safe delivery, and long-term nutrition support with measurable results.</p>
+          </article>
+          <article>
+            <div class="article-icon" aria-hidden="true">S</div>
+            <h3>Our Story</h3>
+            <p>Born from local hunger relief, we partner with neighbors, schools, and food banks to create meaningful community change.</p>
+          </article>
+          <article>
+            <div class="article-icon" aria-hidden="true">G</div>
+            <h3>Our Goal</h3>
+            <p>We are building a future where every family has access to nutritious meals, reliable support, and chance to thrive.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    <section class="contact-section">
+      <div class="page-width contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow">Let's talk</p>
+          <h2>Ready to help your community?</h2>
+          <p>Ask about volunteer opportunities, donation drives, or how to bring food access programs to your neighborhood.</p>
+        </div>
+        <form id="contact">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                    
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" placeholder="Your message"></textarea>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" placeholder="Your message"></textarea>
 
-                     <div class="button-group">
-                        <button type="reset" class="button button-secondary">Clear Form</button>
-                        <button type="submit" class="button">Send Message</button>
-                     </div>
-                    
-                    </form>
-                </section>
+          <div class="button-group">
+            <button type="reset" class="button button-secondary">Clear</button>
+            <button type="submit" class="button">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
 
-            </div>   
-
-        </main>
-
-            <footer>
-                <div class="footer-brand">
-                    <a href="#">Privacy Policy</a>
-                </div>
-                    <p class="footer-legal">&copy; 2026 Helping Families Access Food. All rights reserved.</p>
-                    <p class="footer-tag">Built with HTML, CSS, Flexbox & Grid.</p>
-            </footer>
-        </body>
-
+  <footer>
+    <div class="page-width footer-inner">
+      <a href="#" class="footer-link">Privacy Policy</a>
+      <p class="footer-legal">&copy; 2026 Helping Families Access Food. All rights reserved.</p>
+      <p class="footer-tag">Built with HTML, CSS, Flexbox & Grid.</p>
+    </div>
+  </footer>
+</body>
 
 </html>
