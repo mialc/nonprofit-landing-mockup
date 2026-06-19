@@ -23,7 +23,7 @@
   </header>
 
   <main>
-    <section class="hero" id="home">
+    <section class="hero" id="home" data-reveal>
       <div class="page-width hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Community food equity</p>
@@ -64,7 +64,7 @@
       </div>
     </section>
 
-    <section class="feature-section" id="about">
+    <section class="feature-section" id="about" data-reveal>
       <div class="page-width">
         <div class="section-heading">
           <p class="eyebrow">What we offer</p>
@@ -88,7 +88,7 @@
       </div>
     </section>
 
-    <section class="programs-band" id="programs">
+    <section class="programs-band" id="programs" data-reveal>
       <div class="page-width">
         <div class="section-heading section-heading--light">
           <p class="eyebrow">Program highlights</p>
@@ -112,7 +112,7 @@
       </div>
     </section>
 
-    <section class="skills-section">
+    <section class="skills-section" data-reveal>
       <div class="page-width">
         <div class="skills-heading">
           <p class="eyebrow">Why this page works</p>
@@ -135,7 +135,7 @@
       </div>
     </section>
 
-    <section class="contact-section" id="contact">
+    <section class="contact-section" id="contact" data-reveal>
       <div class="page-width contact-grid">
         <div class="contact-copy">
           <p class="eyebrow">Get in touch</p>
@@ -184,6 +184,20 @@
     });
 
     document.querySelectorAll('section[id]').forEach((section) => sectionObserver.observe(section));
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.18,
+      rootMargin: '0px 0px -10% 0px',
+    });
+
+    document.querySelectorAll('[data-reveal]').forEach((element) => revealObserver.observe(element));
 
     const navItems = document.querySelectorAll('nav a');
     navItems.forEach((item) => item.addEventListener('click', () => {
