@@ -382,6 +382,7 @@ section {
 }
 
 .feature-section,
+.programs-band,
 .contact-section {
   padding: 72px 0;
 }
@@ -392,20 +393,31 @@ section {
 
 .programs-band {
   background: #f3f7ee;
-  padding: 72px 0;
+  padding: 88px 0;
+}
+
+.programs-band .section-heading {
+  margin-bottom: 42px;
+}
+
+.programs-band .section-heading h2 {
+  max-width: 680px;
 }
 
 .program-grid {
   display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
 }
 
 .program-grid article {
   background: var(--surface);
   border-radius: var(--radius);
-  padding: 30px;
-  min-height: 260px;
+  padding: 34px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   box-shadow: var(--shadow);
   border: 1px solid rgba(31, 93, 68, 0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -417,9 +429,11 @@ section {
 }
 
 .program-grid article h3 {
-  margin: 0 0 16px;
-  font-size: 1.35rem;
+  margin: 0 0 22px;
+  font-size: 1.45rem;
   color: var(--text);
+  line-height: 1.1;
+  font-weight: 700;
 }
 
 .program-grid article p {
