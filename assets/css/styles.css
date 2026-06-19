@@ -1,15 +1,21 @@
 html, body { height: 100%; margin: 0; } /* Tells it to take up full height of the view */
 
-/* CSS Variables: centralized color palette and font stack */
+/* CSS Variables: centralized color palette, font stack, and spacing scale */
 :root {
   --green-deep: #1f5d44;
   --green-mid: #2f7a5c;
+  --green-tint: #eef6f0;
   --cream: #faf6ee;
   --coral: #e8763c;
   --coral-dark: #cf5f29;
   --text-dark: #28332c;
   --heading-font: 'Poppins', 'Georgia', serif;
   --body-font: 'Inter', Arial, sans-serif;
+
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
 }
 
 body {
@@ -18,13 +24,19 @@ body {
   font-family: var(--body-font);
 }
 
+/* Sticky nav covers the top of the viewport, so anchor targets need
+   breathing room above them or the heading lands underneath it. */
+#about, #programs, #contact {
+  scroll-margin-top: 76px;
+}
+
 /* Element Selector: Change the background of the entire header tag */
 header {
   background-color: var(--green-deep);
   color: white;
   font-size: 2rem;
   text-align: center;
-  padding: 48px 20px 36px;
+  padding: 56px 24px 44px;
   font-family: var(--heading-font);
   width: 100%;
   margin: 0;
@@ -34,21 +46,19 @@ header {
 
 .header-tagline {
   font-family: var(--body-font);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 400;
   color: #d9ecdf;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 main {
-  padding: 30px;
   text-align: center;
 }
 
 /* Child Selector: Target direct child sections of main */
 div > section {
-  margin-bottom: 20px;
-  padding: 15px;
+  padding: var(--space-xl) var(--space-md);
   text-align: center;
   width: 100%;
   box-sizing: border-box;
@@ -60,7 +70,7 @@ div > section {
 nav {
   flex-direction: row;
   background-color: white;
-  padding: 10px;
+  padding: 16px 10px;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -77,7 +87,7 @@ article {
   border-radius: 14px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  overflow: hidden;
+  padding: var(--space-md) var(--space-md) var(--space-lg);
 }
 
 article:hover {
@@ -85,21 +95,50 @@ article:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
+/* Icon header used in place of a photo on each program card */
+.article-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-sm);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, var(--green-mid), var(--green-deep));
+}
+
+article h3 {
+  font-family: var(--heading-font);
+  margin: 0 0 8px;
+}
+
+article p {
+  margin: 0;
+}
+
 #contact {
   background-color: #ffffff;
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  padding: 32px;
+  padding: var(--space-lg);
   width: 35%;
   min-width: 280px;
   max-width: 1000px;
   margin: 0 auto; /* Center the form horizontally */
 }
 
+.programs-band {
+  background-color: var(--green-tint);
+  padding: var(--space-xl) var(--space-md);
+}
+
 .program-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px; /* Adds space between the articles */
+  gap: var(--space-lg); /* Adds space between the articles */
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 footer {
@@ -114,9 +153,8 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 60px;
+  padding: var(--space-md) 60px;
   box-sizing: border-box;
-  margin-top: 40px;
 }
 
 .footer-tag {
@@ -124,11 +162,22 @@ footer {
   font-weight: 400;
 }
 
+.footer-brand a {
+  color: white;
+  text-decoration: underline;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.footer-brand a:hover {
+  opacity: 1;
+}
+
 /* Force labels to behave like blocks so they take up their own line */
 label {
   display: block;
-  margin-top: 15px;
-  margin-bottom: 5px;
+  margin-top: 18px;
+  margin-bottom: 6px;
   font-weight: 600;
   text-align: left;
 }
@@ -139,7 +188,7 @@ label {
   border: 2px solid #d8e6dd;
   border-radius: 8px;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   box-sizing: border-box;
   font-size: 1rem;
   font-family: var(--body-font);
@@ -161,7 +210,7 @@ label {
 /* Descendant Selector: Make all links inside nav uppercase */
 nav a {
   text-transform: uppercase;
-  padding: 10px 14px;
+  padding: 10px 16px;
   color: var(--green-deep);
   background-color: transparent;
   line-height: 1.5;
@@ -193,10 +242,10 @@ input[type="email"], input[type="text"] {
 .button {
   display: inline-block;
   text-align: center;
-  padding: 14px 24px;
+  padding: 14px 28px;
   font-weight: 600;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 24px 6px 0;
+  margin: var(--space-md) 6px 0;
   background-color: var(--coral);
   color: white;
   border: 2px solid var(--coral);
@@ -213,7 +262,7 @@ input[type="email"], input[type="text"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
 }
 
 .button-secondary {
@@ -231,11 +280,11 @@ input[type="email"], input[type="text"] {
   transform: scale(0.95);
 }
 
-/* Hero layout: text column + image column */
+/* Hero layout: text column + graphic column */
 .hero-flex {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: var(--space-xl);
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
@@ -248,28 +297,57 @@ input[type="email"], input[type="text"] {
 
 .hero-text h2 {
   font-family: var(--heading-font);
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   color: var(--green-deep);
+  margin: 0;
+}
+
+.hero-text > p:first-of-type {
+  margin-top: 12px;
 }
 
 .hero-text h3 {
   font-family: var(--heading-font);
   font-size: 1.2rem;
-  margin-top: 16px;
+  margin: var(--space-md) 0 8px;
 }
 
 .hero-media {
   flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
-article h3 {
+.hero-graphic {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--green-mid), var(--green-deep));
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 12px 30px rgba(31, 93, 68, 0.25);
+}
+
+.hero-graphic-icon {
+  font-size: 3.5rem;
+}
+
+.hero-graphic-stat {
   font-family: var(--heading-font);
-  padding: 0 16px;
-  margin-top: 16px;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
 }
 
-article p {
-  padding: 0 16px 16px;
+.hero-graphic-label {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin: 0;
 }
 
 
@@ -295,7 +373,15 @@ article p {
 
   header {
     font-size: 1.4rem;
-    padding: 16px;
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  div > section {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .programs-band {
+    padding: var(--space-lg) var(--space-sm);
   }
 
   #contact {
@@ -307,14 +393,11 @@ article p {
   .hero-flex {
     flex-direction: column;
     text-align: center;
+    gap: var(--space-lg);
   }
 
   .hero-text {
     text-align: center;
-  }
-
-  .hero-section img {
-    height: 220px;
   }
 }
 
@@ -322,22 +405,4 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-
-article img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 14px 14px 0 0; /* Rounds the top corners to match card's 14px radius */
-}
-
-.hero-section img {
-  max-width: 600px;
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  margin: 0 auto;
 }
