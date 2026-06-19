@@ -54,6 +54,7 @@ article {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 35%;
+  min-width: 280px;
   max-width: 1000px;
   margin: 0 auto; /* Center the form horizontally */
 }
@@ -65,9 +66,6 @@ article {
 }
 
 footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
   background-color: green;
   color: white;
@@ -77,10 +75,11 @@ footer {
   font-weight: 600;
 
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   padding: 15px 60px;
   box-sizing: border-box;
+  margin-top: 40px;
 }
 
 /* Force labels to behave like blocks so they take up their own line */
@@ -176,15 +175,30 @@ input[type="email"], input[type="text"] {
   }
 
   footer {
-    flex-direction: column; 
-    gap: 10px;           
+    flex-direction: column;
+    gap: 10px;
     text-align: center;
   }
 
     nav {
-    flex-direction: column; 
-    align-items: center;    
-    gap: 5px;             
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  header {
+    font-size: 1.4rem;
+    padding: 16px;
+  }
+
+  #contact {
+    width: 90%;
+    min-width: unset;
+    border-radius: 16px;
+  }
+
+  .hero-section img {
+    height: 220px;
   }
 }
 
