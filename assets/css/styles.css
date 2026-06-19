@@ -115,15 +115,15 @@ nav a.active {
 }
 
 .hero {
-  padding: 10px 0 56px;
-  background: linear-gradient(180deg, #1f5d44 0%, #2c7e5b 40%, #3f8b64 57%, #98b797 74%, #eef4ed 100%);
+  padding: 36px 0 44px;
+  background: linear-gradient(180deg, #2f7f5a 0%, #78a079 38%, #d6e0d3 70%, #eef4ed 100%);
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.9fr;
-  gap: 48px;
-  align-items: stretch;
+  gap: 36px;
+  align-items: start;
 }
 
 .eyebrow {
@@ -137,7 +137,6 @@ nav a.active {
 
 .hero-copy h1,
 .section-heading h2,
-.skills-heading h2,
 .contact-copy h2,
 .hero-card h2 {
   margin: 0;
@@ -160,7 +159,7 @@ nav a.active {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-bottom: 44px;
+  margin-bottom: 28px;
 }
 
 .button {
@@ -201,7 +200,7 @@ nav a.active {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
-  margin-top: 24px;
+  margin-top: 18px;
 }
 
 .hero-stats div {
@@ -303,7 +302,6 @@ nav a.active {
 section {
   position: relative;
   scroll-margin-top: 92px;
-  min-height: calc(100vh - 92px);
 }
 
 [data-reveal] {
@@ -345,7 +343,6 @@ section {
 }
 
 .section-heading,
-.skills-heading,
 .contact-copy {
   text-align: center;
 }
@@ -356,7 +353,6 @@ section {
 
 .feature-section .eyebrow,
 .section-heading .eyebrow,
-.skills-heading .eyebrow,
 .contact-copy .eyebrow,
 .programs-band .eyebrow {
   color: var(--green-dark);
@@ -368,23 +364,18 @@ section {
 }
 
 .section-heading h2,
-.skills-heading h2,
 .contact-copy h2 {
   font-size: clamp(2.1rem, 3vw, 3.2rem);
 }
 
 .section-heading p,
-.skills-heading p,
 .contact-copy p,
 .feature-card p,
-.program-grid article p,
-.skill-card p {
+.program-grid article p {
   color: #445a49;
 }
 
 .feature-section,
-.programs-band,
-.skills-section,
 .contact-section {
   padding: 72px 0;
 }
@@ -393,39 +384,18 @@ section {
   background: #f6faf3;
 }
 
-.programs-band {
-  background: #f3f7ee;
-  background-image: radial-gradient(circle at top left, rgba(203, 177, 116, 0.12), transparent 30%), radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.35), transparent 28%);
-}
-
-.skills-section {
-  background: var(--green-soft);
-}
-
 .contact-section {
   background: #f7faf4;
 }
 
 
-.feature-grid,
-.program-grid,
-.skills-grid {
+.feature-grid {
   display: grid;
   gap: 24px;
-}
-
-.feature-grid,
-.skills-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.program-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .feature-card,
-.program-grid article,
-.skill-card,
 form {
   position: relative;
   background: var(--surface);
@@ -436,46 +406,14 @@ form {
 }
 
 .feature-card:hover,
-.program-grid article:hover,
-.skill-card:hover,
 form:hover {
   transform: translateY(-4px);
   box-shadow: 0 28px 60px rgba(31, 93, 68, 0.12);
 }
-.program-grid article h3,
-.skill-card strong {
-  margin: 0 0 14px;
-  font-size: 1.25rem;
-  color: var(--text);
-}
-
-.feature-card p,
-.program-grid article p,
-.skill-card p {
+.feature-card p {
   margin: 0;
   color: var(--muted);
   line-height: 1.8;
-}
-
-.programs-band .section-heading h2 {
-  color: var(--text);
-}
-
-.programs-band p,
-.programs-band .eyebrow {
-  color: var(--muted);
-}
-
-.programs-band article {
-  border: 1px solid rgba(31, 93, 68, 0.08);
-}
-
-.skills-section {
-  background: var(--green-soft);
-}
-
-.skills-grid .skill-card {
-  min-height: 220px;
 }
 
 .contact-grid {
@@ -549,7 +487,6 @@ footer {
   .hero-grid,
   .feature-grid,
   .program-grid,
-  .skills-grid,
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -567,12 +504,11 @@ footer {
   }
 
   .hero {
-    padding: 60px 0 50px;
+    padding: 44px 0 44px;
   }
 
   .hero-copy h1,
   .section-heading h2,
-  .skills-heading h2,
   .contact-copy h2,
   .hero-card h2 {
     font-size: 2rem;
